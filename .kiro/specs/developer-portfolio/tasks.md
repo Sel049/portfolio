@@ -18,11 +18,11 @@
   - Replace `src/index.css` with the content from the design document: Google Fonts import for Space Grotesk and Inter with `display=swap`, Tailwind directives, `@layer base` (dark color-scheme, smooth scroll, reduced-motion media query, body defaults), `@layer utilities` (`.glass`, `.glass-elevated`, `.ambient-glow`, `.reveal` / `.reveal.visible`, stagger delay utilities, `.focus-ring`)
   - _Requirements: 2.4, 2.5_
 
-- [ ] 1.4 Create TypeScript type definitions
+- [x] 1.4 Create TypeScript type definitions
   - Create `src/types/index.ts` with all interfaces from the design: `SocialLink`, `Stat`, `PersonalData`, `TechItem`, `ProficiencyLabel`, `SkillEntry`, `SkillCategory`, `Project`, `Service`, `ApproachEntry`, `ContactFormData`, `ContactFormErrors`, `FormStatus`
   - _Requirements: 1.4_
 
-- [ ] 1.5 Populate data files
+- [x] 1.5 Populate data files
   - Create `src/data/personal.ts` exporting a `PersonalData` object with placeholder name, title, tagline, bio paragraphs, resumeUrl, portraitSrc, email, location, socials, and stats
   - Create `src/data/techStack.ts` exporting a `TechItem[]` array with at least six placeholder entries
   - Create `src/data/skills.ts` exporting a `SkillCategory[]` array with three categories and multiple skill entries each
