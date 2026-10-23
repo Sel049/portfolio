@@ -39,14 +39,14 @@
   - Clean up listener on unmount and on query change
   - _Requirements: 16.1, 16.2, 16.3_
 
-- [ ] 2.2 Implement `useNavbarScroll`
+- [x] 2.2 Implement `useNavbarScroll`
   - Create `src/hooks/useNavbarScroll.ts`
   - Accept optional `threshold` (default 60)
   - Attach passive scroll listener; return `isScrolled` boolean
   - Remove listener on unmount
   - _Requirements: 15.1, 15.2, 15.3, 15.4_
 
-- [ ] 2.3 Implement `useScrollReveal`
+- [x] 2.3 Implement `useScrollReveal`
   - Create `src/hooks/useScrollReveal.ts`
   - Import `useMediaQuery` for reduced-motion detection
   - Attach IntersectionObserver to child `.reveal` elements with default `{ threshold: 0.15, rootMargin: '0px 0px -48px 0px' }`
