@@ -33,7 +33,7 @@
 
 ## Phase 2: Custom Hooks
 
-- [ ] 2.1 Implement `useMediaQuery`
+- [x] 2.1 Implement `useMediaQuery`
   - Create `src/hooks/useMediaQuery.ts`
   - Subscribe to `window.matchMedia(query)` and return current match state
   - Clean up listener on unmount and on query change
