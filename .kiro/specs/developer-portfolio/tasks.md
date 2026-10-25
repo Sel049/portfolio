@@ -76,20 +76,20 @@
   - Render `<section id={id}>` with `py-24 md:py-32` padding and `max-w-7xl mx-auto px-6` inner container
   - _Requirements: 1.2_
 
-- [ ] 3.2 Implement `GlassCard`
+- [x] 3.2 Implement `GlassCard`
   - Create `src/components/ui/GlassCard.tsx`
   - Apply `.glass` by default; apply `.glass-elevated` when `elevated` prop is true
   - Forward ref for scroll-reveal targeting
   - _Requirements: 5.2, 7.2_
 
-- [ ] 3.3 Implement `ProgressBar`
+- [x] 3.3 Implement `ProgressBar`
   - Create `src/components/ui/ProgressBar.tsx`
   - Render `<div role="progressbar" aria-valuenow={value} aria-valuemin={0} aria-valuemax={100} aria-label={label}>`
   - Clamp internal value to [0, 100]
   - Render filled inner bar with width proportional to value
   - _Requirements: 7.3, 7.4, 7.5_
 
-- [ ] 3.4 Implement `Carousel`
+- [x] 3.4 Implement `Carousel`
   - Create `src/components/ui/Carousel.tsx`
   - Use `useCarousel` for state
   - Render flex slide track with `translateX(-${activeIndex * 100}%)` transition
