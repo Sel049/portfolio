@@ -99,12 +99,12 @@
   - Pause/resume auto-play on mouse enter/leave
   - _Requirements: 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7_
 
-- [ ] 3.5 Implement `GreenBadge`
+- [x] 3.5 Implement `GreenBadge`
   - Create `src/components/ui/GreenBadge.tsx`
   - Small pill component with green-primary accent for the Hero status badge
   - _Requirements: 4.2_
 
-- [ ] 3.6 Write primitive component tests
+- [x] 3.6 Write primitive component tests
   - `ProgressBar`: correct ARIA attributes for various values; property test that ARIA attributes are correct for any value in [0,100]
   - `Carousel`: prev/next buttons have correct aria-labels; dot aria-selected matches active index; property test for dot aria-selected correctness
   - `GlassCard`: renders children, applies elevated class correctly
