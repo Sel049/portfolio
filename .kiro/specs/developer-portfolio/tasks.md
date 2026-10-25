@@ -63,7 +63,7 @@
   - Clear interval on unmount
   - _Requirements: 9.8, 9.9, 9.10, 9.11, 9.12_
 
-- [ ] 2.5 Write hook unit and property tests
+- [x] 2.5 Write hook unit and property tests
   - Test `useNavbarScroll`: threshold detection, listener cleanup
   - Test `useMediaQuery`: correct initial state, updates on media change, cleanup
   - Test `useCarousel`: index wrapping (next/prev), goTo clamping, auto-play cleanup — property tests with fast-check for the invariant `0 <= activeIndex < itemCount`

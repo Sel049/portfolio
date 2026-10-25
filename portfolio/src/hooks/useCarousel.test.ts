@@ -179,15 +179,14 @@ describe('useCarousel – property: 0 <= activeIndex < itemCount', () => {
   it('activeIndex is always in [0, itemCount - 1] for any operation sequence', () => {
     fc.assert(
       fc.property(
-        // itemCount between 1 and 20
-        fc.integer({ min: 1, max: 20 }),
-        // sequence of 1–50 operations
-        fc.integer({ min: 1, max: 50 }).chain(len =>
-          fc.integer({ min: 1, max: 20 }).chain(count =>
-            fc.array(operationArb(count), { minLength: len, maxLength: len }).map(ops => ({ count, ops }))
+        // itemCount between 1 and 20, paired with a sequence of operations for that count
+        fc.integer({ min: 1, max: 20 }).chain(count =>
+          fc.tuple(
+            fc.constant(count),
+            fc.array(operationArb(count), { minLength: 1, maxLength: 50 }),
           )
         ),
-        ({ count, ops }) => {
+        ([count, ops]) => {
           const { result } = renderHook(() => useCarousel(count))
 
           for (const op of ops) {
