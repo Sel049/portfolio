@@ -71,7 +71,7 @@
 
 ## Phase 3: Shared UI Primitives
 
-- [ ] 3.1 Implement `SectionWrapper`
+- [x] 3.1 Implement `SectionWrapper`
   - Create `src/components/ui/SectionWrapper.tsx`
   - Render `<section id={id}>` with `py-24 md:py-32` padding and `max-w-7xl mx-auto px-6` inner container
   - _Requirements: 1.2_
