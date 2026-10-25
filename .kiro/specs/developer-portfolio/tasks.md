@@ -55,7 +55,7 @@
   - Disconnect observer on unmount
   - _Requirements: 14.1, 14.2, 14.3, 14.4, 14.5, 14.6_
 
-- [ ] 2.4 Implement `useCarousel`
+- [x] 2.4 Implement `useCarousel`
   - Create `src/hooks/useCarousel.ts`
   - Accept `itemCount` and optional `autoPlayInterval`
   - Implement `next()` (wraps last→0), `prev()` (wraps 0→last), `goTo(i)` (clamps to valid range)
