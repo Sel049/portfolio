@@ -159,7 +159,7 @@
   - Use `useScrollReveal`
   - _Requirements: 7.1, 7.2, 7.3, 7.4, 7.5_
 
-- [ ] 5.4 Write About, TechStack, and Skills tests
+- [x] 5.4 Write About, TechStack, and Skills tests
   - About: bio paragraphs rendered; resume button href matches `resumeUrl`; property test that all PersonalData.bio paragraphs appear
   - TechStack: property test that card count equals TechItem array length; each card shows name
   - Skills: skills grouped by category; ProgressBar ARIA present
