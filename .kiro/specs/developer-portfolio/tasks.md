@@ -121,7 +121,7 @@
   - MobileMenu slides in with `transition-transform`
   - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9_
 
-- [ ] 4.2 Implement `Hero`
+- [x] 4.2 Implement `Hero`
   - Create `src/components/Hero/Hero.tsx`
   - Two-column grid (`grid-cols-1 lg:grid-cols-2 gap-12 items-center`)
   - Left: `GreenBadge` → `<h1>` name → tagline → CTA buttons → `StatsRow`
