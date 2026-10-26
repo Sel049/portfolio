@@ -112,7 +112,7 @@
 
 ## Phase 4: Navbar and Hero Sections
 
-- [ ] 4.1 Implement `Navbar`
+- [x] 4.1 Implement `Navbar`
   - Create `src/components/Navbar/Navbar.tsx` and `src/components/Navbar/MobileMenu.tsx`
   - Use `useNavbarScroll` to toggle `glass + shadow-glass` vs transparent; apply `transition-all duration-300`
   - Render navigation links that scroll to section IDs on click
