@@ -145,7 +145,7 @@
   - Use `useScrollReveal` with stagger delays
   - _Requirements: 5.1, 5.2, 5.3_
 
-- [ ] 5.2 Implement `TechStack`
+- [x] 5.2 Implement `TechStack`
   - Create `src/components/TechStack/TechStack.tsx`
   - Responsive grid `grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4`
   - Render one `TechCard` per `TechItem`; each card shows name and icon
