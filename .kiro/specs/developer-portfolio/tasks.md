@@ -129,7 +129,7 @@
   - Use `useScrollReveal` for reveal animations
   - _Requirements: 4.1, 4.2, 4.3, 4.4, 4.5_
 
-- [ ] 4.3 Write Navbar and Hero tests
+- [x] 4.3 Write Navbar and Hero tests
   - Navbar: transparent class at scroll 0; glass class after scroll > 60; hamburger ARIA attributes toggle correctly on click; mobile menu opens and closes
   - Hero: h1 contains name; all stats visible; portrait fallback on error
   - _Requirements: 3.1, 3.2, 3.4, 3.6, 3.7, 4.1, 4.3, 4.4_
