@@ -136,7 +136,7 @@
 
 ## Phase 5: About, TechStack, and Skills Sections
 
-- [ ] 5.1 Implement `About`
+- [x] 5.1 Implement `About`
   - Create `src/components/About/About.tsx`
   - Two-column layout on `lg:`
   - Render bio paragraphs from `PersonalData.bio`
