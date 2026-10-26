@@ -152,7 +152,7 @@
   - Use `useScrollReveal` for staggered card reveals
   - _Requirements: 6.1, 6.2, 6.3_
 
-- [ ] 5.3 Implement `Skills`
+- [x] 5.3 Implement `Skills`
   - Create `src/components/Skills/Skills.tsx`
   - Three-column grid `grid-cols-1 md:grid-cols-3 gap-8`
   - Each `SkillCategory` in a `GlassCard`; each `SkillEntry` with `ProgressBar`
