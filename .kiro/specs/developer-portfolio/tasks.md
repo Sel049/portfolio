@@ -204,7 +204,7 @@
   - Return `ContactFormErrors` with descriptive messages per field
   - _Requirements: 12.6, 12.7_
 
-- [ ] 7.2 Implement `Contact`
+- [x] 7.2 Implement `Contact`
   - Create `src/components/Contact/Contact.tsx`
   - Two-column layout `lg:grid-cols-5`; form `lg:col-span-3`, info `lg:col-span-2`
   - Form fields: name, email, subject, message with controlled inputs
