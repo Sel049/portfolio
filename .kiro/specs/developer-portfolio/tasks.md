@@ -190,7 +190,7 @@
   - Each `ApproachCard` shows `ApproachEntry.icon`, `ApproachEntry.heading`, `ApproachEntry.body`
   - _Requirements: 11.1, 11.2, 11.3_
 
-- [ ] 6.4 Write Projects, Services, and Testimonials tests
+- [x] 6.4 Write Projects, Services, and Testimonials tests
   - Projects: property test that filteredProjects for any category ⊆ all projects; property test "All" returns all; category change resets carousel index; project card shows required fields
   - Services: property test that card count equals services array length
   - Testimonials: section heading text; ApproachCard displays all three fields
