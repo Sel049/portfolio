@@ -198,7 +198,7 @@
 
 ## Phase 7: Contact and Footer Sections
 
-- [ ] 7.1 Implement `validateForm`
+- [x] 7.1 Implement `validateForm`
   - Create or co-locate validation logic in `src/components/Contact/Contact.tsx` or a separate `src/utils/validateForm.ts`
   - Implement all validation rules: name non-empty, email pattern, subject non-empty, message non-empty and >= 20 chars (all after trim)
   - Return `ContactFormErrors` with descriptive messages per field
