@@ -167,7 +167,7 @@
 
 ## Phase 6: Projects, Services, and Testimonials Sections
 
-- [ ] 6.1 Implement `Projects`
+- [x] 6.1 Implement `Projects`
   - Create `src/components/Projects/Projects.tsx`
   - Derive categories (`useMemo`) as `['All', ...union of all project.categories]`
   - Manage `activeCategory` state; derive `filteredProjects` via `useMemo`

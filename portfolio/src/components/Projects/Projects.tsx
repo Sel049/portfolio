@@ -1,67 +1,78 @@
-import React, { useState, useMemo, useEffect } from 'react'
+import React, { useState, useMemo } from 'react'
 import type { Project } from '../../types'
-import { useCarousel } from '../../hooks/useCarousel'
-import { useScrollReveal } from '../../hooks/useScrollReveal'
+import SectionWrapper from '../ui/SectionWrapper'
 import Carousel from '../ui/Carousel'
 import GlassCard from '../ui/GlassCard'
-import SectionWrapper from '../ui/SectionWrapper'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 
-// ─── Fallback placeholder (data URI) ─────────────────────────────────────────
+interface ProjectsProps {
+  projects: Project[]
+}
 
-const FALLBACK_SRC =
-  'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450"><rect width="800" height="450" fill="%23111411"/><text x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="18" fill="%23707770">Image unavailable</text></svg>'
+// Fallback placeholder (inline SVG data URI)
+const PLACEHOLDER_SRC =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='450'%3E%3Crect width='800' height='450' fill='%23111411'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23707770' font-size='18' font-family='sans-serif'%3ENo preview%3C/text%3E%3C/svg%3E"
+
+const GitHubIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+  </svg>
+)
+
+const ExternalLinkIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+    <polyline points="15 3 21 3 21 9" />
+    <line x1="10" y1="14" x2="21" y2="3" />
+  </svg>
+)
 
 // ─── ProjectCard ──────────────────────────────────────────────────────────────
+// Req 8.5: shows title, description, tags, image, liveUrl, githubUrl
+// Req 8.6: onError swaps thumbnail to fallback placeholder
 
 interface ProjectCardProps {
   project: Project
 }
 
-/**
- * Renders a single project with thumbnail, title, description, tags,
- * and optional live / GitHub links.
- *
- * Requirements: 8.5, 8.6
- */
-function ProjectCard({ project }: ProjectCardProps) {
-  const { title, description, imageSrc, tags, liveUrl, githubUrl } = project
-
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    // Req 8.6 — swap to fallback on load failure
-    ;(e.currentTarget as HTMLImageElement).src = FALLBACK_SRC
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  const handleImgError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    e.currentTarget.src = PLACEHOLDER_SRC
   }
 
   return (
     <GlassCard className="flex flex-col h-full overflow-hidden">
-      {/* Thumbnail */}
-      <div className="relative w-full aspect-video overflow-hidden rounded-t-glass bg-bg-elevated">
+      {/* Thumbnail — Req 8.5, 8.6 */}
+      <div className="relative w-full aspect-video overflow-hidden">
         <img
-          src={imageSrc}
-          alt={title}
+          src={project.imageSrc}
+          alt={project.title}
           loading="lazy"
-          onError={handleImageError}
+          width={800}
+          height={450}
+          onError={handleImgError}
           className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
         />
       </div>
 
-      {/* Content */}
       <div className="flex flex-col flex-1 gap-4 p-6">
         {/* Title — Req 8.5 */}
-        <h3 className="font-heading font-semibold text-card text-text-primary leading-snug">
-          {title}
+        <h3 className="font-heading text-card text-text-primary leading-snug">
+          {project.title}
         </h3>
 
         {/* Description — Req 8.5 */}
-        <p className="text-body-sm text-text-secondary leading-relaxed flex-1">
-          {description}
+        <p className="text-body-sm text-text-secondary flex-1">
+          {project.description}
         </p>
 
         {/* Tags — Req 8.5 */}
         <div className="flex flex-wrap gap-2">
-          {tags.map(tag => (
+          {project.tags.map(tag => (
             <span
               key={tag}
-              className="px-2.5 py-0.5 rounded-full text-label font-body bg-green-primary/10 text-green-primary border border-border-green"
+              className="px-2.5 py-0.5 rounded-full text-label font-body bg-bg-elevated border border-border-subtle text-text-secondary"
             >
               {tag}
             </span>
@@ -69,106 +80,50 @@ function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {/* Links — Req 8.5 */}
-        <div className="flex gap-3 pt-1">
-          {liveUrl && (
-            <a
-              href={liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="focus-ring inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-green-primary text-bg-primary text-body-sm font-heading font-semibold hover:bg-green-secondary transition-colors duration-200"
-            >
-              {/* External link icon */}
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path
-                  d="M5.5 2.5H2.5a1 1 0 0 0-1 1V11a1 1 0 0 0 1 1H10a1 1 0 0 0 1-1V8M8 1.5h4.5m0 0V6m0-4.5L6 8"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              Live Demo
-            </a>
-          )}
-          {githubUrl && (
-            <a
-              href={githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="focus-ring inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-border-subtle text-text-secondary text-body-sm font-heading hover:border-border-green hover:text-text-primary transition-colors duration-200"
-            >
-              {/* GitHub icon */}
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.09.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.091-.647.35-1.087.636-1.337-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.103-.254-.447-1.27.097-2.646 0 0 .84-.269 2.75 1.026A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.295 2.748-1.026 2.748-1.026.546 1.376.202 2.392.1 2.646.64.698 1.028 1.591 1.028 2.682 0 3.841-2.337 4.687-4.565 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
-              </svg>
-              GitHub
-            </a>
-          )}
-        </div>
+        {(project.liveUrl || project.githubUrl) && (
+          <div className="flex items-center gap-4 pt-1">
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="focus-ring inline-flex items-center gap-1.5 text-body-sm font-body font-medium text-green-primary hover:text-green-secondary transition-colors"
+              >
+                <ExternalLinkIcon />
+                Live demo
+              </a>
+            )}
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="focus-ring inline-flex items-center gap-1.5 text-body-sm font-body font-medium text-text-secondary hover:text-text-primary transition-colors"
+              >
+                <GitHubIcon />
+                View code
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </GlassCard>
   )
 }
 
-// ─── CategoryFilter ───────────────────────────────────────────────────────────
-
-interface CategoryFilterProps {
-  categories: string[]
-  activeCategory: string
-  onSelect: (category: string) => void
-}
-
+// ─── Projects section ─────────────────────────────────────────────────────────
 /**
- * Row of pill-style filter buttons. One is active at a time.
+ * Requirements: 8.1, 8.2, 8.3, 8.4, 8.5, 8.6
  *
- * Requirements: 8.1, 8.2, 8.3
- */
-function CategoryFilter({ categories, activeCategory, onSelect }: CategoryFilterProps) {
-  return (
-    <div
-      role="group"
-      aria-label="Filter projects by category"
-      className="flex flex-wrap gap-2"
-    >
-      {categories.map(category => {
-        const isActive = category === activeCategory
-        return (
-          <button
-            key={category}
-            onClick={() => onSelect(category)}
-            aria-pressed={isActive}
-            className={`focus-ring px-4 py-2 rounded-full text-body-sm font-heading font-medium transition-colors duration-200 ${
-              isActive
-                ? 'bg-green-primary text-bg-primary'
-                : 'border border-border-subtle text-text-secondary hover:border-border-green hover:text-text-primary'
-            }`}
-          >
-            {category}
-          </button>
-        )
-      })}
-    </div>
-  )
-}
-
-// ─── Projects ─────────────────────────────────────────────────────────────────
-
-export interface ProjectsProps {
-  projects: Project[]
-}
-
-/**
- * Projects section.
- *
- * - Derives category list from all project.categories values (Req 8.1)
- * - Filters by activeCategory (Req 8.2, 8.3)
- * - Resets carousel to index 0 when category changes (Req 8.4)
- * - Renders ProjectCard inside a Carousel (Req 8.5, 8.6)
+ * Category reset strategy: we use the `activeCategory` string as the `key` on
+ * <Carousel>. When the key changes React remounts the component, which causes
+ * useCarousel inside Carousel to reinitialise with activeIndex = 0 — satisfying
+ * Req 8.4 without changing the Carousel component's public API.
  */
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   const sectionRef = useScrollReveal<HTMLDivElement>()
 
-  // Req 8.1 — derive unique category list, always leading with 'All'
+  // Req 8.1: derive categories from all project.categories, prepend 'All'
   const categories = useMemo((): string[] => {
     const cats = new Set<string>(['All'])
     projects.forEach(p => p.categories.forEach(c => cats.add(c)))
@@ -177,18 +132,11 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
 
   const [activeCategory, setActiveCategory] = useState<string>('All')
 
-  // Req 8.2, 8.3 — filter by active category
+  // Req 8.2 & 8.3: filter by active category; 'All' returns everything
   const filteredProjects = useMemo((): Project[] => {
     if (activeCategory === 'All') return projects
     return projects.filter(p => p.categories.includes(activeCategory))
   }, [projects, activeCategory])
-
-  // Req 8.4 — reset carousel to slide 0 whenever the filter changes
-  const carousel = useCarousel(filteredProjects.length)
-  useEffect(() => {
-    carousel.goTo(0)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeCategory])
 
   return (
     <SectionWrapper id="projects">
@@ -198,34 +146,44 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
           Projects
         </h2>
         <p className="reveal reveal-delay-1 text-body-lg text-text-secondary mb-10 max-w-2xl">
-          A selection of things I've built — from SaaS dashboards to design systems.
+          A selection of things I've built — from dashboards and storefronts to design
+          systems and APIs.
         </p>
 
-        {/* Category filter — Req 8.1 */}
-        <div className="reveal reveal-delay-2 mb-10">
-          <CategoryFilter
-            categories={categories}
-            activeCategory={activeCategory}
-            onSelect={setActiveCategory}
-          />
+        {/* Category filter (Req 8.1) */}
+        <div
+          className="reveal reveal-delay-2 flex flex-wrap gap-2 mb-10"
+          role="group"
+          aria-label="Project category filter"
+        >
+          {categories.map(cat => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              aria-pressed={cat === activeCategory}
+              className={[
+                'focus-ring px-4 py-2 rounded-full text-body-sm font-body font-medium transition-colors border',
+                cat === activeCategory
+                  ? 'bg-green-primary text-bg-primary border-green-primary'
+                  : 'bg-transparent text-text-secondary border-border-subtle hover:border-border-green hover:text-text-primary',
+              ].join(' ')}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
 
-        {/* Carousel of ProjectCards — Req 8.4, 8.5 */}
+        {/* Carousel — key on activeCategory resets index to 0 (Req 8.4) */}
         <div className="reveal reveal-delay-3">
-          {filteredProjects.length > 0 ? (
-            <Carousel
-              items={filteredProjects}
-              renderItem={(project) => (
-                <div className="px-1 pb-4">
-                  <ProjectCard project={project} />
-                </div>
-              )}
-            />
-          ) : (
-            <p className="text-body text-text-muted text-center py-16">
-              No projects in this category yet.
-            </p>
-          )}
+          <Carousel
+            key={activeCategory}
+            items={filteredProjects}
+            renderItem={(project) => (
+              <div className="px-2 pb-4">
+                <ProjectCard project={project} />
+              </div>
+            )}
+          />
         </div>
       </div>
     </SectionWrapper>
