@@ -176,7 +176,7 @@
   - Each `ProjectCard` shows title, description, tags, image (with `onError` fallback), liveUrl, githubUrl
   - _Requirements: 8.1, 8.2, 8.3, 8.4, 8.5, 8.6_
 
-- [ ] 6.2 Implement `Services`
+- [x] 6.2 Implement `Services`
   - Create `src/components/Services/Services.tsx`
   - Responsive bento grid `grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6`
   - Each `ServiceCard` shows `Service.icon`, `Service.title`, `Service.description`
