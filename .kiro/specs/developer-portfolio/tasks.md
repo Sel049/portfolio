@@ -220,7 +220,7 @@
   - All `target="_blank"` links include `rel="noopener noreferrer"`
   - _Requirements: 13.1, 13.2, 13.3_
 
-- [ ] 7.4 Write Contact form and Footer tests
+- [x] 7.4 Write Contact form and Footer tests
   - `validateForm`: property test all-valid → empty errors; property test any invalid field → non-empty errors; test all individual validation rules with example inputs
   - Contact form: error messages render with role=alert; aria-describedby links input to error; idle→submitting→success transition; idle→submitting→error transition with dismissible banner; field error clears on change
   - Footer: all social links rendered; rel=noopener present on new-tab links; services names appear

@@ -366,3 +366,326 @@ describe('Contact – property: empty submission always produces validation erro
     }
   })
 })
+
+// ─── validateForm property-based tests ───────────────────────────────────────
+
+import { validateForm } from '../../utils/validateForm'
+
+/**
+ * **Validates: Requirements 12.6, 12.7**
+ *
+ * Property: validateForm returns an empty errors object when and only when
+ * every field is valid — non-empty after trim, valid email, message >= 20 chars.
+ */
+describe('validateForm – Req 12.6: all valid fields → empty errors', () => {
+  it('returns empty errors object for any fully-valid form data', () => {
+    // Generate valid email: user@domain.tld
+    const validEmailArb = fc.tuple(
+      fc.stringMatching(/^[a-z]{1,8}$/),
+      fc.stringMatching(/^[a-z]{2,8}$/),
+      fc.stringMatching(/^[a-z]{2,4}$/),
+    ).map(([u, d, t]) => `${u}@${d}.${t}`)
+
+    // Non-empty string after trimming
+    const nonEmptyArb = fc.string({ minLength: 1, maxLength: 80 })
+      .filter(s => s.trim().length > 0)
+
+    // Message >= 20 chars after trimming
+    const validMessageArb = fc.string({ minLength: 20, maxLength: 200 })
+      .filter(s => s.trim().length >= 20)
+
+    fc.assert(
+      fc.property(
+        nonEmptyArb,
+        validEmailArb,
+        nonEmptyArb,
+        validMessageArb,
+        (name, email, subject, message) => {
+          const errors = validateForm({ name, email, subject, message })
+          return Object.keys(errors).length === 0
+        }
+      ),
+      { numRuns: 200 }
+    )
+  })
+})
+
+/**
+ * **Validates: Requirements 12.6, 12.7**
+ *
+ * Property: validateForm returns a non-empty errors object when any required
+ * field is blank (empty or whitespace-only).
+ */
+describe('validateForm – Req 12.7: any blank required field → non-empty errors', () => {
+  const validEmailArb = fc.tuple(
+    fc.stringMatching(/^[a-z]{1,8}$/),
+    fc.stringMatching(/^[a-z]{2,8}$/),
+    fc.stringMatching(/^[a-z]{2,4}$/),
+  ).map(([u, d, t]) => `${u}@${d}.${t}`)
+
+  const nonEmptyArb = fc.string({ minLength: 1, maxLength: 80 })
+    .filter(s => s.trim().length > 0)
+
+  const validMessageArb = fc.string({ minLength: 20, maxLength: 200 })
+    .filter(s => s.trim().length >= 20)
+
+  const blankArb = fc.oneof(
+    fc.constant(''),
+    fc.string({ minLength: 1, maxLength: 10 }).map(s => s.replace(/\S/g, ' ')),
+  )
+
+  it('returns errors when name is blank', () => {
+    fc.assert(
+      fc.property(
+        blankArb,
+        validEmailArb,
+        nonEmptyArb,
+        validMessageArb,
+        (name, email, subject, message) => {
+          const errors = validateForm({ name, email, subject, message })
+          return Object.keys(errors).length > 0 && errors.name !== undefined
+        }
+      ),
+      { numRuns: 100 }
+    )
+  })
+
+  it('returns errors when email is blank', () => {
+    fc.assert(
+      fc.property(
+        nonEmptyArb,
+        blankArb,
+        nonEmptyArb,
+        validMessageArb,
+        (name, email, subject, message) => {
+          const errors = validateForm({ name, email, subject, message })
+          return Object.keys(errors).length > 0 && errors.email !== undefined
+        }
+      ),
+      { numRuns: 100 }
+    )
+  })
+
+  it('returns errors when subject is blank', () => {
+    fc.assert(
+      fc.property(
+        nonEmptyArb,
+        validEmailArb,
+        blankArb,
+        validMessageArb,
+        (name, email, subject, message) => {
+          const errors = validateForm({ name, email, subject, message })
+          return Object.keys(errors).length > 0 && errors.subject !== undefined
+        }
+      ),
+      { numRuns: 100 }
+    )
+  })
+
+  it('returns errors when message is blank', () => {
+    fc.assert(
+      fc.property(
+        nonEmptyArb,
+        validEmailArb,
+        nonEmptyArb,
+        blankArb,
+        (name, email, subject, message) => {
+          const errors = validateForm({ name, email, subject, message })
+          return Object.keys(errors).length > 0 && errors.message !== undefined
+        }
+      ),
+      { numRuns: 100 }
+    )
+  })
+})
+
+/**
+ * **Validates: Requirements 12.6, 12.7**
+ *
+ * Property: validateForm rejects any email string that does not match
+ * /^[^\s@]+@[^\s@]+\.[^\s@]+$/.
+ */
+describe('validateForm – Req 12.6 / 12.7: email validation', () => {
+  it('returns an email error for strings that fail the email pattern', () => {
+    // Generate strings that clearly don't match the email pattern
+    const invalidEmailArb = fc.oneof(
+      fc.constant('notanemail'),
+      fc.constant('@nodomain'),
+      fc.constant('missing@tld'),
+      fc.constant('two@@ats.com'),
+      fc.constant('spaces in@email.com'),
+      fc.constant(''),
+    )
+
+    const nonEmptyArb = fc.string({ minLength: 1 }).filter(s => s.trim().length > 0)
+    const validMessageArb = fc.string({ minLength: 20 }).filter(s => s.trim().length >= 20)
+
+    fc.assert(
+      fc.property(
+        nonEmptyArb,
+        invalidEmailArb,
+        nonEmptyArb,
+        validMessageArb,
+        (name, email, subject, message) => {
+          const errors = validateForm({ name, email, subject, message })
+          return errors.email !== undefined
+        }
+      ),
+      { numRuns: 100 }
+    )
+  })
+
+  it('accepts valid email addresses', () => {
+    const validEmails = [
+      'user@example.com',
+      'test.name@domain.org',
+      'hello+tag@sub.domain.io',
+      'a@b.co',
+    ]
+    const nonEmptyArb = fc.string({ minLength: 1 }).filter(s => s.trim().length > 0)
+    const validMessageArb = fc.string({ minLength: 20 }).filter(s => s.trim().length >= 20)
+
+    fc.assert(
+      fc.property(
+        nonEmptyArb,
+        fc.constantFrom(...validEmails),
+        nonEmptyArb,
+        validMessageArb,
+        (name, email, subject, message) => {
+          const errors = validateForm({ name, email, subject, message })
+          return errors.email === undefined
+        }
+      ),
+      { numRuns: 50 }
+    )
+  })
+})
+
+/**
+ * **Validates: Requirements 12.6, 12.7**
+ *
+ * Property: validateForm rejects any message shorter than 20 characters after
+ * trimming, and accepts any message of 20+ characters after trimming.
+ */
+describe('validateForm – Req 12.6 / 12.7: message length validation', () => {
+  const nonEmptyArb = fc.string({ minLength: 1 }).filter(s => s.trim().length > 0)
+  const validEmailArb = fc.tuple(
+    fc.stringMatching(/^[a-z]{1,8}$/),
+    fc.stringMatching(/^[a-z]{2,8}$/),
+    fc.stringMatching(/^[a-z]{2,4}$/),
+  ).map(([u, d, t]) => `${u}@${d}.${t}`)
+
+  it('returns a message error for any message with < 20 chars after trim', () => {
+    // Messages that are non-blank but < 20 chars when trimmed
+    const shortMessageArb = fc.string({ minLength: 1, maxLength: 19 })
+      .filter(s => s.trim().length > 0 && s.trim().length < 20)
+
+    fc.assert(
+      fc.property(
+        nonEmptyArb,
+        validEmailArb,
+        nonEmptyArb,
+        shortMessageArb,
+        (name, email, subject, message) => {
+          const errors = validateForm({ name, email, subject, message })
+          return errors.message !== undefined
+        }
+      ),
+      { numRuns: 100 }
+    )
+  })
+
+  it('accepts any message with >= 20 chars after trim', () => {
+    const longMessageArb = fc.string({ minLength: 20, maxLength: 500 })
+      .filter(s => s.trim().length >= 20)
+
+    fc.assert(
+      fc.property(
+        nonEmptyArb,
+        validEmailArb,
+        nonEmptyArb,
+        longMessageArb,
+        (name, email, subject, message) => {
+          const errors = validateForm({ name, email, subject, message })
+          return errors.message === undefined
+        }
+      ),
+      { numRuns: 100 }
+    )
+  })
+})
+
+/**
+ * **Validates: Requirements 12.6, 12.7**
+ *
+ * Unit tests: individual validation rules with concrete example inputs.
+ */
+describe('validateForm – unit: individual validation rules', () => {
+  it('name: required — blank name produces name error', () => {
+    const errors = validateForm({ name: '   ', email: 'a@b.co', subject: 'Hi', message: 'Long enough message here OK' })
+    expect(errors.name).toBe('Name is required')
+  })
+
+  it('name: valid — non-blank name produces no name error', () => {
+    const errors = validateForm({ name: 'Alice', email: 'a@b.co', subject: 'Hi', message: 'Long enough message here OK' })
+    expect(errors.name).toBeUndefined()
+  })
+
+  it('email: required — blank email produces email error', () => {
+    const errors = validateForm({ name: 'Alice', email: '', subject: 'Hi', message: 'Long enough message here OK' })
+    expect(errors.email).toBe('Email is required')
+  })
+
+  it('email: invalid format — malformed email produces format error', () => {
+    const errors = validateForm({ name: 'Alice', email: 'notvalid', subject: 'Hi', message: 'Long enough message here OK' })
+    expect(errors.email).toBe('Please enter a valid email address')
+  })
+
+  it('email: valid format — well-formed email produces no email error', () => {
+    const errors = validateForm({ name: 'Alice', email: 'alice@example.com', subject: 'Hi', message: 'Long enough message here OK' })
+    expect(errors.email).toBeUndefined()
+  })
+
+  it('subject: required — blank subject produces subject error', () => {
+    const errors = validateForm({ name: 'Alice', email: 'alice@example.com', subject: '', message: 'Long enough message here OK' })
+    expect(errors.subject).toBe('Subject is required')
+  })
+
+  it('subject: valid — non-blank subject produces no subject error', () => {
+    const errors = validateForm({ name: 'Alice', email: 'alice@example.com', subject: 'Hiring', message: 'Long enough message here OK' })
+    expect(errors.subject).toBeUndefined()
+  })
+
+  it('message: required — blank message produces message error', () => {
+    const errors = validateForm({ name: 'Alice', email: 'alice@example.com', subject: 'Hi', message: '' })
+    expect(errors.message).toBe('Message is required')
+  })
+
+  it('message: too short — message under 20 chars after trim produces length error', () => {
+    const errors = validateForm({ name: 'Alice', email: 'alice@example.com', subject: 'Hi', message: 'Too short' })
+    expect(errors.message).toBe('Message must be at least 20 characters')
+  })
+
+  it('message: valid — message of exactly 20 chars after trim produces no error', () => {
+    const errors = validateForm({ name: 'Alice', email: 'alice@example.com', subject: 'Hi', message: '12345678901234567890' })
+    expect(errors.message).toBeUndefined()
+  })
+
+  it('all valid — fully valid data produces empty errors object', () => {
+    const errors = validateForm({
+      name: 'Alice',
+      email: 'alice@example.com',
+      subject: 'Hiring enquiry',
+      message: 'Hello, I would like to hire you for a project.',
+    })
+    expect(Object.keys(errors)).toHaveLength(0)
+  })
+
+  it('all invalid — all blank fields produce errors for every field', () => {
+    const errors = validateForm({ name: '', email: '', subject: '', message: '' })
+    expect(errors.name).toBeDefined()
+    expect(errors.email).toBeDefined()
+    expect(errors.subject).toBeDefined()
+    expect(errors.message).toBeDefined()
+  })
+})
