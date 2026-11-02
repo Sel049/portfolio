@@ -183,7 +183,7 @@
   - Use `useScrollReveal` with stagger delays
   - _Requirements: 10.1, 10.2, 10.3_
 
-- [ ] 6.3 Implement `Testimonials`
+- [x] 6.3 Implement `Testimonials`
   - Create `src/components/Testimonials/Testimonials.tsx`
   - Section heading: "What You Can Expect"
   - Render `Carousel` of `ApproachCard` components
