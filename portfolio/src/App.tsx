@@ -7,6 +7,7 @@ import Projects from './components/Projects/Projects'
 import Testimonials from './components/Testimonials/Testimonials'
 import Contact from './components/Contact/Contact'
 import Navbar from './components/Navbar/Navbar'
+import Footer from './components/Footer/Footer'
 import { personal } from './data/personal'
 import { skills } from './data/skills'
 import { techStack } from './data/techStack'
@@ -26,6 +27,7 @@ function App() {
       <Projects projects={projects} />
       <Testimonials entries={approach} />
       <Contact data={personal} />
+      <Footer data={personal} services={services} />
     </>
   )
 }

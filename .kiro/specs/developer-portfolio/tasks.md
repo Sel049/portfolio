@@ -214,7 +214,7 @@
   - Clear field error on field `onChange` when errors already exist
   - _Requirements: 12.1, 12.2, 12.3, 12.4, 12.5, 12.8, 12.9, 12.10, 12.11_
 
-- [ ] 7.3 Implement `Footer`
+- [x] 7.3 Implement `Footer`
   - Create `src/components/Footer/Footer.tsx`
   - Render footer columns: navigation links, services links from `services` data, and social links from `PersonalData.socials`
   - All `target="_blank"` links include `rel="noopener noreferrer"`
