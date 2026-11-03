@@ -228,7 +228,7 @@
 
 ## Phase 8: App Composition and Accessibility Audit
 
-- [ ] 8.1 Compose `App.tsx`
+- [x] 8.1 Compose `App.tsx`
   - Import and render all ten sections in correct order: `Navbar`, `Hero`, `About`, `TechStack`, `Skills`, `Projects`, `Services`, `Testimonials`, `Contact`, `Footer`
   - Pass typed data from `src/data/` files to each section component
   - Wrap appropriate sections in `SectionWrapper` with correct `id` props
