@@ -360,9 +360,9 @@ const Contact: React.FC<ContactProps> = ({ data }) => {
                   Connect
                 </span>
                 <div className="flex flex-wrap gap-3">
-                  {data.socials.map(social => (
+                  {data.socials.map((social, idx) => (
                     <a
-                      key={social.platform}
+                      key={`${social.platform}-${idx}`}
                       href={social.url}
                       target={social.platform === 'email' ? undefined : '_blank'}
                       rel={social.platform === 'email' ? undefined : 'noopener noreferrer'}

@@ -157,10 +157,10 @@ export default function Footer({ data, services }: FooterProps) {
           <div>
             <ColHeading>Connect</ColHeading>
             <ul className="flex flex-col gap-3">
-              {data.socials.map(social => {
+              {data.socials.map((social, idx) => {
                 const isExternal = social.platform !== 'email'
                 return (
-                  <li key={social.platform}>
+                  <li key={`${social.platform}-${idx}`}>
                     {/* Req 13.1: renders platform name and URL */}
                     {/* Req 13.3: target="_blank" links include rel="noopener noreferrer" */}
                     <a

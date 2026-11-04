@@ -263,7 +263,7 @@
   - Add explicit `width` and `height` attributes to all `<img>` elements
   - _Requirements: 18.2, 18.3, 18.4_
 
-- [ ] 9.2 Configure Vitest and run full test suite
+- [x] 9.2 Configure Vitest and run full test suite
   - Configure `vitest.config.ts` (or inline in `vite.config.ts`) with `jsdom` environment
   - Run all tests and fix any failures
   - Confirm property tests execute with at least 100 iterations per property
