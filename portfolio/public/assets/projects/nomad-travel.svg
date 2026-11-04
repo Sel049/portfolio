@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="32" y1="16" x2="780" y2="432" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#DCEBE4"/><stop offset="1" stop-color="#AFCFC4"/>
+    </linearGradient>
+    <linearGradient id="map" x1="430" y1="95" x2="738" y2="385" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C9E0D3"/><stop offset="1" stop-color="#A9CFC0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" rx="24" fill="url(#bg)"/>
+  <rect x="31" y="28" width="738" height="394" rx="17" fill="#F7FAF6"/>
+  <rect x="31" y="28" width="738" height="56" rx="17" fill="#FFFFFF"/>
+  <path d="M31 84h738" stroke="#E5ECE7"/>
+  <circle cx="66" cy="56" r="16" fill="#D5EBDF"/>
+  <path d="M66 46c-5 0-9 4-9 9 0 7 9 15 9 15s9-8 9-15c0-5-4-9-9-9Z" fill="#308A60"/>
+  <circle cx="66" cy="55" r="3" fill="#F7FAF6"/>
+  <text x="94" y="62" fill="#254235" font-family="Arial,sans-serif" font-size="16" font-weight="700">Nomad</text>
+  <text x="560" y="60" fill="#74877B" font-family="Arial,sans-serif" font-size="11">My trips</text>
+  <circle cx="714" cy="56" r="17" fill="#E4EFE8"/>
+  <circle cx="714" cy="52" r="6" fill="#93B7A1"/>
+  <path d="M703 66c1-7 5-10 11-10s10 3 11 10" fill="#93B7A1"/>
+  <text x="60" y="122" fill="#244334" font-family="Arial,sans-serif" font-size="20" font-weight="700">Your next adventure</text>
+  <text x="60" y="145" fill="#84958A" font-family="Arial,sans-serif" font-size="11">A week in Portugal · May 12–19</text>
+  <rect x="60" y="167" width="296" height="227" rx="12" fill="#F1F5F0"/>
+  <text x="82" y="199" fill="#365744" font-family="Arial,sans-serif" font-size="12" font-weight="700">ITINERARY</text>
+  <path d="M98 231v116" stroke="#A4CDB1" stroke-width="2" stroke-dasharray="4 5"/>
+  <circle cx="98" cy="237" r="7" fill="#388D62"/>
+  <text x="119" y="235" fill="#355646" font-family="Arial,sans-serif" font-size="12" font-weight="700">Lisbon</text>
+  <text x="119" y="253" fill="#87968B" font-family="Arial,sans-serif" font-size="10">May 12–15 · 3 nights</text>
+  <circle cx="98" cy="290" r="7" fill="#7AB58B"/>
+  <text x="119" y="288" fill="#355646" font-family="Arial,sans-serif" font-size="12" font-weight="700">Sintra</text>
+  <text x="119" y="306" fill="#87968B" font-family="Arial,sans-serif" font-size="10">May 15–16 · day trip</text>
+  <circle cx="98" cy="343" r="7" fill="#E9A76D"/>
+  <text x="119" y="341" fill="#355646" font-family="Arial,sans-serif" font-size="12" font-weight="700">Porto</text>
+  <text x="119" y="359" fill="#87968B" font-family="Arial,sans-serif" font-size="10">May 16–19 · 3 nights</text>
+  <rect x="380" y="107" width="358" height="287" rx="12" fill="url(#map)"/>
+  <path d="M403 144c38 17 43 39 79 42s52-29 91-20 34 37 77 41 43-18 77-8M397 328c53-29 82-6 107-32s23-48 61-52 52 21 94 7 47-27 79-20M517 110c-11 37 15 47 5 78s-32 31-23 61 38 44 26 74-31 34-17 69M659 110c-22 26-22 45-8 67s19 35 7 58-37 35-27 64 34 37 18 79" stroke="#EFF7F0" stroke-width="3" stroke-linecap="round"/>
+  <path d="M454 290c40-8 70-67 118-63s53 48 96 37 48-46 78-40" stroke="#348D62" stroke-width="3" stroke-dasharray="6 7"/>
+  <circle cx="454" cy="290" r="11" fill="#348D62" stroke="#F7FAF6" stroke-width="4"/>
+  <circle cx="572" cy="227" r="11" fill="#7BB78B" stroke="#F7FAF6" stroke-width="4"/>
+  <circle cx="668" cy="264" r="11" fill="#E9A76D" stroke="#F7FAF6" stroke-width="4"/>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17231E"/><stop offset="1" stop-color="#0A0E0C"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" rx="24" fill="url(#bg)"/>
+  <rect x="49" y="35" width="702" height="380" rx="16" fill="#101713" stroke="#FFFFFF" stroke-opacity=".1"/>
+  <rect x="49" y="35" width="199" height="380" rx="16" fill="#141C17"/>
+  <path d="M248 35v380" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <circle cx="82" cy="72" r="16" fill="#7CFF6B"/>
+  <path d="M76 72h12m-6-6v12" stroke="#102015" stroke-width="2"/>
+  <text x="108" y="77" fill="#EAF0EA" font-family="Arial,sans-serif" font-size="16" font-weight="700">Relay</text>
+  <rect x="67" y="105" width="161" height="30" rx="7" fill="#7CFF6B" fill-opacity=".12"/>
+  <circle cx="85" cy="120" r="5" fill="#7CFF6B"/>
+  <text x="99" y="124" fill="#C8D6CB" font-family="Arial,sans-serif" font-size="11">Design team</text>
+  <circle cx="85" cy="158" r="5" fill="#707C73"/>
+  <text x="99" y="162" fill="#A6B1A8" font-family="Arial,sans-serif" font-size="11">Weekend plans</text>
+  <circle cx="85" cy="196" r="5" fill="#707C73"/>
+  <text x="99" y="200" fill="#A6B1A8" font-family="Arial,sans-serif" font-size="11">Project updates</text>
+  <text x="275" y="74" fill="#EDF2ED" font-family="Arial,sans-serif" font-size="16" font-weight="700">Design team</text>
+  <circle cx="284" cy="98" r="3" fill="#7CFF6B"/>
+  <text x="295" y="102" fill="#849087" font-family="Arial,sans-serif" font-size="10">4 members · end-to-end encrypted</text>
+  <path d="M267 119h466" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <circle cx="289" cy="155" r="15" fill="#D18D72"/>
+  <text x="316" y="151" fill="#87948A" font-family="Arial,sans-serif" font-size="10">Maya · 10:42</text>
+  <rect x="316" y="160" width="221" height="43" rx="10" fill="#1B241E"/>
+  <text x="331" y="186" fill="#D5DED7" font-family="Arial,sans-serif" font-size="12">The new dashboard is ready!</text>
+  <circle cx="289" cy="236" r="15" fill="#86A7C2"/>
+  <text x="316" y="232" fill="#87948A" font-family="Arial,sans-serif" font-size="10">Noah · 10:44</text>
+  <rect x="316" y="241" width="246" height="43" rx="10" fill="#1B241E"/>
+  <text x="331" y="267" fill="#D5DED7" font-family="Arial,sans-serif" font-size="12">Looks great! Sharing feedback now.</text>
+  <rect x="481" y="301" width="230" height="43" rx="10" fill="#24432D"/>
+  <text x="498" y="327" fill="#DDF0DE" font-family="Arial,sans-serif" font-size="12">Thanks, pushed the final tweaks.</text>
+  <text x="684" y="359" fill="#7CFF6B" font-family="Arial,sans-serif" font-size="10">10:46  ✓✓</text>
+  <rect x="269" y="370" width="462" height="30" rx="9" fill="#171F19" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <text x="288" y="390" fill="#6F7C72" font-family="Arial,sans-serif" font-size="11">Message the team...</text>
+  <circle cx="706" cy="385" r="10" fill="#7CFF6B"/>
+  <path d="m702 385 3 3 5-6" stroke="#102015" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

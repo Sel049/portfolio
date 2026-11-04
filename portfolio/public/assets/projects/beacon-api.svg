@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="0" x2="720" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17241E"/><stop offset="1" stop-color="#090D0B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" rx="24" fill="url(#bg)"/>
+  <rect x="42" y="42" width="716" height="366" rx="16" fill="#0B100D" stroke="#FFFFFF" stroke-opacity=".12"/>
+  <path d="M42 93h716" stroke="#FFFFFF" stroke-opacity=".1"/>
+  <circle cx="72" cy="68" r="6" fill="#FF716A"/>
+  <circle cx="94" cy="68" r="6" fill="#F4C968"/>
+  <circle cx="116" cy="68" r="6" fill="#68D991"/>
+  <text x="148" y="73" fill="#99A69C" font-family="Arial,sans-serif" font-size="12">beacon-api / requests</text>
+  <text x="81" y="139" fill="#7CFF6B" font-family="Arial,sans-serif" font-size="13" font-weight="700">GET</text>
+  <text x="126" y="139" fill="#E4ECE6" font-family="monospace" font-size="14">/api/v1/analytics/overview</text>
+  <rect x="594" y="117" width="108" height="30" rx="7" fill="#173627"/>
+  <circle cx="612" cy="132" r="4" fill="#7CFF6B"/>
+  <text x="624" y="136" fill="#93EAA2" font-family="Arial,sans-serif" font-size="11">200 OK</text>
+  <path d="M80 166h640" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <text x="81" y="201" fill="#8F9D93" font-family="Arial,sans-serif" font-size="11">RESPONSE</text>
+  <rect x="81" y="221" width="638" height="148" rx="10" fill="#101712"/>
+  <text x="104" y="251" fill="#BFCAC2" font-family="monospace" font-size="13">{</text>
+  <text x="129" y="278" fill="#C5A8FF" font-family="monospace" font-size="13">"status"</text>
+  <text x="199" y="278" fill="#AAB6AD" font-family="monospace" font-size="13">:</text>
+  <text x="214" y="278" fill="#A8E29B" font-family="monospace" font-size="13">"success",</text>
+  <text x="129" y="305" fill="#C5A8FF" font-family="monospace" font-size="13">"data"</text>
+  <text x="183" y="305" fill="#AAB6AD" font-family="monospace" font-size="13">:</text>
+  <text x="198" y="305" fill="#AAB6AD" font-family="monospace" font-size="13">{</text>
+  <text x="153" y="332" fill="#C5A8FF" font-family="monospace" font-size="13">"activeUsers"</text>
+  <text x="267" y="332" fill="#AAB6AD" font-family="monospace" font-size="13">:</text>
+  <text x="283" y="332" fill="#F1D38A" font-family="monospace" font-size="13">24892</text>
+  <text x="104" y="357" fill="#BFCAC2" font-family="monospace" font-size="13">}</text>
+  <text x="81" y="390" fill="#58665D" font-family="Arial,sans-serif" font-size="10">JWT AUTH  ·  RATE LIMITED  ·  OPENAPI</text>
+</svg>

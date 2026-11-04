@@ -5,7 +5,7 @@ import MobileMenu from './MobileMenu'
 const NAV_LINKS = [
   { label: 'Hero',         href: '#hero'          },
   { label: 'About',        href: '#about'         },
-  { label: 'Tech Stack',   href: '#techstack'     },
+  { label: 'Tech Stack',   href: '#tech-stack'    },
   { label: 'Skills',       href: '#skills'        },
   { label: 'Projects',     href: '#projects'      },
   { label: 'Services',     href: '#services'      },

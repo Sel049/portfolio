@@ -10,7 +10,7 @@ interface SectionWrapperProps {
 export default function SectionWrapper({ id, className, children }: SectionWrapperProps) {
   return (
     <section id={id}>
-      <div className={`py-24 md:py-32 max-w-7xl mx-auto px-6${className ? ` ${className}` : ''}`}>
+      <div className={`py-12 md:py-16 max-w-7xl mx-auto px-6${className ? ` ${className}` : ''}`}>
         {children}
       </div>
     </section>

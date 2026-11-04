@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#18241D"/><stop offset="1" stop-color="#090E0B"/>
+    </linearGradient>
+    <linearGradient id="line" x1="270" y1="333" x2="714" y2="174" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#42D990"/><stop offset="1" stop-color="#B3FF73"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" rx="24" fill="url(#bg)"/>
+  <rect x="28" y="28" width="744" height="394" rx="18" fill="#0C120E" stroke="#FFFFFF" stroke-opacity=".1"/>
+  <rect x="28" y="28" width="154" height="394" rx="18" fill="#101913"/>
+  <path d="M164 28v394" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <circle cx="60" cy="66" r="14" fill="#7CFF6B"/>
+  <path d="M54 66h12m-6-6v12" stroke="#102015" stroke-width="2"/>
+  <rect x="86" y="58" width="66" height="15" rx="7.5" fill="#DDE9DF"/>
+  <rect x="50" y="111" width="99" height="10" rx="5" fill="#7CFF6B" fill-opacity=".28"/>
+  <rect x="50" y="148" width="78" height="9" rx="4.5" fill="#859187" fill-opacity=".48"/>
+  <rect x="50" y="180" width="89" height="9" rx="4.5" fill="#859187" fill-opacity=".32"/>
+  <rect x="50" y="212" width="72" height="9" rx="4.5" fill="#859187" fill-opacity=".32"/>
+  <text x="207" y="76" fill="#F4F7F2" font-family="Arial,sans-serif" font-size="21" font-weight="700">Overview</text>
+  <text x="207" y="98" fill="#8C998F" font-family="Arial,sans-serif" font-size="11">Your product at a glance</text>
+  <rect x="207" y="119" width="164" height="77" rx="12" fill="#141D17" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <rect x="387" y="119" width="164" height="77" rx="12" fill="#141D17" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <rect x="567" y="119" width="174" height="77" rx="12" fill="#141D17" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <text x="225" y="146" fill="#8C998F" font-family="Arial,sans-serif" font-size="10">ACTIVE USERS</text>
+  <text x="225" y="179" fill="#F4F7F2" font-family="Arial,sans-serif" font-size="24" font-weight="700">24,892</text>
+  <text x="405" y="146" fill="#8C998F" font-family="Arial,sans-serif" font-size="10">CONVERSION</text>
+  <text x="405" y="179" fill="#F4F7F2" font-family="Arial,sans-serif" font-size="24" font-weight="700">8.46%</text>
+  <text x="585" y="146" fill="#8C998F" font-family="Arial,sans-serif" font-size="10">REVENUE</text>
+  <text x="585" y="179" fill="#F4F7F2" font-family="Arial,sans-serif" font-size="24" font-weight="700">$38,410</text>
+  <rect x="207" y="214" width="534" height="174" rx="12" fill="#111913" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <text x="229" y="243" fill="#E8EFE9" font-family="Arial,sans-serif" font-size="12" font-weight="700">Engagement over time</text>
+  <path d="M230 275h486M230 310h486M230 345h486" stroke="#FFFFFF" stroke-opacity=".07"/>
+  <path d="m230 347 55-24 48 10 54-45 54 18 58-54 49 21 55-40 56 10 57-31" stroke="url(#line)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="660" cy="212" r="4" fill="#7CFF6B"/>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="15" y1="20" x2="780" y2="430" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EFEDE6"/><stop offset="1" stop-color="#D9E5D9"/>
+    </linearGradient>
+    <linearGradient id="product" x1="454" y1="120" x2="685" y2="379" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B9D2B9"/><stop offset="1" stop-color="#597A62"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" rx="24" fill="url(#bg)"/>
+  <rect x="28" y="27" width="744" height="396" rx="17" fill="#F8F8F4"/>
+  <path d="M28 86h744" stroke="#E1E5DD"/>
+  <text x="58" y="64" fill="#1B2A20" font-family="Arial,sans-serif" font-size="20" font-weight="700">FIELD &amp; FORM</text>
+  <text x="346" y="61" fill="#56655A" font-family="Arial,sans-serif" font-size="12">Shop</text>
+  <text x="397" y="61" fill="#56655A" font-family="Arial,sans-serif" font-size="12">Our story</text>
+  <circle cx="712" cy="55" r="16" fill="#E7ECE4"/>
+  <path d="M708 50h8l-1 10h-6l-1-10Zm-1 0h10m-7 0v-2a2 2 0 0 1 4 0v2" stroke="#283A2C" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="70" y="158" fill="#78917B" font-family="Arial,sans-serif" font-size="11" font-weight="700" letter-spacing="2">MADE FOR SLOWER DAYS</text>
+  <text x="70" y="205" fill="#1B2A20" font-family="Georgia,serif" font-size="37">Everyday,</text>
+  <text x="70" y="247" fill="#1B2A20" font-family="Georgia,serif" font-size="37">made better.</text>
+  <text x="70" y="282" fill="#6F7B70" font-family="Arial,sans-serif" font-size="13">Thoughtful objects for home and away.</text>
+  <rect x="70" y="309" width="138" height="40" rx="5" fill="#263D2B"/>
+  <text x="94" y="334" fill="#FFFFFF" font-family="Arial,sans-serif" font-size="12" font-weight="700">Explore collection</text>
+  <rect x="450" y="112" width="269" height="270" rx="11" fill="url(#product)"/>
+  <circle cx="585" cy="241" r="91" fill="#F4EFE2" fill-opacity=".68"/>
+  <path d="M547 219c0-23 17-40 38-40s38 17 38 40v84h-76v-84Z" fill="#C87952"/>
+  <path d="M561 181c0-19 48-19 48 0v13h-48v-13Z" fill="#E8BA75"/>
+  <rect x="567" y="260" width="38" height="43" rx="5" fill="#B96747"/>
+  <path d="M577 232h17" stroke="#F0CDB5" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="493" cy="146" r="4" fill="#F7F3E9"/>
+  <circle cx="672" cy="338" r="6" fill="#F7F3E9" fill-opacity=".7"/>
+</svg>

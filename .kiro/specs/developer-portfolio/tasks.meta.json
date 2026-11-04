@@ -185,6 +185,13 @@
         "chatSessionId": "sess_0fa01705-b4d6-49ed-afc5-f70bd8bd5168",
         "timestamp": 1793796042978
       }
+    ],
+    "9.4 End-to-end integration smoke tests": [
+      {
+        "executionId": "edf3834c-9484-4b1f-90c7-3b28aa8190ac",
+        "chatSessionId": "sess_4f697cef-ace3-4af3-8e74-cec97c586831",
+        "timestamp": 1793796166233
+      }
     ]
   }
 }

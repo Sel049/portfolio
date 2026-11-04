@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
+import { useMediaQuery } from './useMediaQuery'
 
 /**
  * Manages carousel index state and optional auto-play.
@@ -24,6 +25,7 @@ export function useCarousel(
   const [activeIndex, setActiveIndex] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)')
 
   // Req 9.8: next() wraps from last → 0
   const next = useCallback(() => {
@@ -43,12 +45,12 @@ export function useCarousel(
   // Req 9.11: auto-play with pause/resume support
   // Req 9.12: interval cleared on unmount (via effect cleanup)
   useEffect(() => {
-    if (autoPlayInterval <= 0 || isPaused) return
+    if (autoPlayInterval <= 0 || isPaused || prefersReducedMotion) return
     intervalRef.current = setInterval(next, autoPlayInterval)
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current)
     }
-  }, [autoPlayInterval, isPaused, next])
+  }, [autoPlayInterval, isPaused, next, prefersReducedMotion])
 
   return {
     activeIndex,

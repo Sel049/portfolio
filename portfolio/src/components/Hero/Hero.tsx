@@ -22,7 +22,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
   const sectionRef = useScrollReveal<HTMLDivElement>()
 
   const handlePortraitError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    e.currentTarget.src = '/assets/portrait-placeholder.webp'
+    e.currentTarget.src = '/assets/portrait-fallback.svg'
   }
 
   return (

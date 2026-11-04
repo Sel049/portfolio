@@ -47,6 +47,6 @@ describe('Hero – portrait', () => {
     // Simulate a broken image
     fireEvent.error(img)
 
-    expect(img.src).toContain('/assets/portrait-placeholder.webp')
+    expect(img.src).toContain('/assets/portrait-fallback.svg')
   })
 })

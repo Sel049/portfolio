@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17192A"/><stop offset="1" stop-color="#0B0D16"/>
+    </linearGradient>
+    <linearGradient id="orb" x1="451" y1="134" x2="679" y2="349" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B8A2FF"/><stop offset="1" stop-color="#6552BF"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" rx="24" fill="url(#bg)"/>
+  <rect x="27" y="27" width="746" height="396" rx="17" fill="#10121D" stroke="#FFFFFF" stroke-opacity=".1"/>
+  <rect x="27" y="27" width="178" height="396" rx="17" fill="#131522"/>
+  <path d="M204 27v396" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <circle cx="59" cy="62" r="15" fill="#9E89FF"/>
+  <circle cx="59" cy="62" r="6" fill="#17192A"/>
+  <text x="84" y="67" fill="#F1EEFF" font-family="Arial,sans-serif" font-size="15" font-weight="700">Orbit UI</text>
+  <text x="49" y="119" fill="#8D8CA3" font-family="Arial,sans-serif" font-size="10" font-weight="700">FOUNDATIONS</text>
+  <rect x="49" y="138" width="126" height="29" rx="7" fill="#9E89FF" fill-opacity=".18"/>
+  <text x="61" y="157" fill="#C7BAFF" font-family="Arial,sans-serif" font-size="11">Color tokens</text>
+  <text x="61" y="198" fill="#9291A6" font-family="Arial,sans-serif" font-size="11">Typography</text>
+  <text x="61" y="231" fill="#9291A6" font-family="Arial,sans-serif" font-size="11">Spacing</text>
+  <text x="49" y="280" fill="#8D8CA3" font-family="Arial,sans-serif" font-size="10" font-weight="700">COMPONENTS</text>
+  <text x="61" y="308" fill="#9291A6" font-family="Arial,sans-serif" font-size="11">Buttons</text>
+  <text x="61" y="341" fill="#9291A6" font-family="Arial,sans-serif" font-size="11">Cards</text>
+  <text x="61" y="374" fill="#9291A6" font-family="Arial,sans-serif" font-size="11">Forms</text>
+  <text x="239" y="77" fill="#F1EEFF" font-family="Arial,sans-serif" font-size="22" font-weight="700">Color system</text>
+  <text x="239" y="99" fill="#8D8CA3" font-family="Arial,sans-serif" font-size="11">A cohesive palette for every interface.</text>
+  <rect x="239" y="123" width="322" height="137" rx="13" fill="#181A29" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <text x="259" y="151" fill="#B9B7C8" font-family="Arial,sans-serif" font-size="11">PRIMARY PALETTE</text>
+  <rect x="259" y="170" width="49" height="64" rx="7" fill="#9E89FF"/>
+  <rect x="318" y="170" width="49" height="64" rx="7" fill="#7662D5"/>
+  <rect x="377" y="170" width="49" height="64" rx="7" fill="#5745A8"/>
+  <rect x="436" y="170" width="49" height="64" rx="7" fill="#3A326B"/>
+  <rect x="495" y="170" width="45" height="64" rx="7" fill="#29263F"/>
+  <rect x="580" y="123" width="166" height="137" rx="13" fill="#181A29" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <circle cx="663" cy="183" r="39" fill="url(#orb)"/>
+  <circle cx="663" cy="183" r="16" stroke="#E4DEFF" stroke-opacity=".72"/>
+  <path d="M620 227c22-17 63-17 86 0" stroke="#A89AFF" stroke-opacity=".65"/>
+  <rect x="239" y="280" width="507" height="110" rx="13" fill="#181A29" stroke="#FFFFFF" stroke-opacity=".08"/>
+  <text x="259" y="307" fill="#B9B7C8" font-family="Arial,sans-serif" font-size="11">BUTTON VARIANTS</text>
+  <rect x="259" y="329" width="105" height="38" rx="8" fill="#9E89FF"/>
+  <text x="283" y="353" fill="#171522" font-family="Arial,sans-serif" font-size="11" font-weight="700">Primary</text>
+  <rect x="381" y="329" width="105" height="38" rx="8" fill="#272638" stroke="#48465F"/>
+  <text x="404" y="353" fill="#E4E0F5" font-family="Arial,sans-serif" font-size="11">Secondary</text>
+  <rect x="503" y="329" width="105" height="38" rx="8" fill="#9E89FF" fill-opacity=".13"/>
+  <text x="528" y="353" fill="#C7BAFF" font-family="Arial,sans-serif" font-size="11">Subtle</text>
+</svg>
