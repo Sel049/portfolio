@@ -269,7 +269,7 @@
   - Confirm property tests execute with at least 100 iterations per property
   - _Requirements: 2.4, 9.8, 12.6_
 
-- [ ] 9.3 Production build and bundle size check
+- [x] 9.3 Production build and bundle size check
   - Run `npm run build`
   - Check gzipped bundle size is below 250 kB
   - Confirm Tailwind JIT purges unused styles
