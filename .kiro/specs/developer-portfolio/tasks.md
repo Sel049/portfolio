@@ -234,7 +234,7 @@
   - Wrap appropriate sections in `SectionWrapper` with correct `id` props
   - _Requirements: 1.1, 1.2, 1.3_
 
-- [ ] 8.2 Perform heading hierarchy audit
+- [x] 8.2 Perform heading hierarchy audit
   - Verify exactly one `<h1>` exists (Hero name)
   - Verify all section headings use `<h2>`
   - Verify all card-level headings use `<h3>`
