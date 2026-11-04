@@ -240,12 +240,12 @@
   - Verify all card-level headings use `<h3>`
   - _Requirements: 17.1, 17.2_
 
-- [ ] 8.3 Audit and fix keyboard navigation and focus indicators
+- [x] 8.3 Audit and fix keyboard navigation and focus indicators
   - Tab through all interactive elements and confirm reachability
   - Verify `focus-ring` class (2px solid #7CFF6B outline) is applied to all buttons, links, and form controls
   - _Requirements: 17.3, 17.4_
 
-- [ ] 8.4 Audit and fix external link security
+- [x] 8.4 Audit and fix external link security
   - Search for all `<a target="_blank">` elements and confirm each has `rel="noopener noreferrer"`
   - Write a property test confirming the rel attribute invariant
   - _Requirements: 17.5_

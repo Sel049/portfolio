@@ -113,6 +113,30 @@
         "chatSessionId": "sess_dc1b3b2c-fb8d-4f8f-ba79-470a180cfc75",
         "timestamp": 1793792666944
       }
+    ],
+    "8.3 Audit and fix keyboard navigation and focus indicators": [
+      {
+        "executionId": "afb46771-2f38-4507-bc9a-df4ed2f8329a",
+        "chatSessionId": "sess_39fdf1d4-b310-449d-8ed8-05664ec4c76c",
+        "timestamp": 1793792859866
+      },
+      {
+        "executionId": "afb46771-2f38-4507-bc9a-df4ed2f8329a",
+        "chatSessionId": "sess_39fdf1d4-b310-449d-8ed8-05664ec4c76c",
+        "timestamp": 1793793098047
+      }
+    ],
+    "8.4 Audit and fix external link security": [
+      {
+        "executionId": "79a98f56-e60a-4171-9929-107edb6c8ced",
+        "chatSessionId": "sess_30cd0952-6b0c-487d-a517-b3ca2ef8dde6",
+        "timestamp": 1793793380065
+      },
+      {
+        "executionId": "79a98f56-e60a-4171-9929-107edb6c8ced",
+        "chatSessionId": "sess_30cd0952-6b0c-487d-a517-b3ca2ef8dde6",
+        "timestamp": 1793793675237
+      }
     ]
   }
 }
