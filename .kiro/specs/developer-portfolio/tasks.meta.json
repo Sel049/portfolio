@@ -137,6 +137,30 @@
         "chatSessionId": "sess_30cd0952-6b0c-487d-a517-b3ca2ef8dde6",
         "timestamp": 1793793675237
       }
+    ],
+    "8.5 Verify no `dangerouslySetInnerHTML` usage": [
+      {
+        "executionId": "39f90e90-89bc-4b7f-b9ef-8f8bb748d982",
+        "chatSessionId": "sess_e15ed246-a48a-41e5-a0bb-2d13323ff3c2",
+        "timestamp": 1793793813644
+      },
+      {
+        "executionId": "39f90e90-89bc-4b7f-b9ef-8f8bb748d982",
+        "chatSessionId": "sess_e15ed246-a48a-41e5-a0bb-2d13323ff3c2",
+        "timestamp": 1793793839198
+      }
+    ],
+    "9.1 Add portrait and project image assets": [
+      {
+        "executionId": "6eec4310-1afd-4975-b976-5f3e5fdcdaa5",
+        "chatSessionId": "sess_3a233747-55f4-4456-a488-e208f3652caa",
+        "timestamp": 1793793965062
+      },
+      {
+        "executionId": "6eec4310-1afd-4975-b976-5f3e5fdcdaa5",
+        "chatSessionId": "sess_3a233747-55f4-4456-a488-e208f3652caa",
+        "timestamp": 1793794078409
+      }
     ]
   }
 }

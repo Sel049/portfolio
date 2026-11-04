@@ -250,13 +250,13 @@
   - Write a property test confirming the rel attribute invariant
   - _Requirements: 17.5_
 
-- [ ] 8.5 Verify no `dangerouslySetInnerHTML` usage
+- [x] 8.5 Verify no `dangerouslySetInnerHTML` usage
   - Search the entire `src/` directory for `dangerouslySetInnerHTML` and remove any instances
   - _Requirements: 18.5_
 
 ## Phase 9: Performance, Images, and Final Polish
 
-- [ ] 9.1 Add portrait and project image assets
+- [x] 9.1 Add portrait and project image assets
   - Place `portrait-placeholder.webp` in `public/assets/`
   - Ensure all project thumbnail references in `src/data/projects.ts` point to `.webp` files
   - Add `loading="lazy"` to all below-fold `<img>` elements
