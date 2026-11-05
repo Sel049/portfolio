@@ -6,7 +6,7 @@ import { useCarousel } from './useCarousel'
 // ─── useCarousel unit tests ───────────────────────────────────────────────────
 
 describe('useCarousel – next()', () => {
-  // Req 9.9 — next() advances activeIndex by 1
+ 
   it('increments activeIndex by 1 on each call', () => {
     const { result } = renderHook(() => useCarousel(5))
     expect(result.current.activeIndex).toBe(0)
