@@ -18,7 +18,7 @@ describe('useCarousel – next()', () => {
     expect(result.current.activeIndex).toBe(2)
   })
 
-  // Req 9.9 — next() wraps from last → 0
+  
   it('wraps from the last index back to 0', () => {
     const { result } = renderHook(() => useCarousel(3))
 
