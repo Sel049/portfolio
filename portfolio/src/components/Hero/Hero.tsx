@@ -96,6 +96,8 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
               aria-hidden="true"
             />
 
+            <div className="portrait-orbit" aria-hidden="true" />
+
             {/* Developer portrait (Req 4.4) */}
             <img
               src={data.portraitSrc}

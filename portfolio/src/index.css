@@ -58,6 +58,31 @@
     pointer-events: none;
   }
 
+  .portrait-orbit {
+    position: absolute;
+    inset: -12px;
+    z-index: 20;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background:
+      linear-gradient(transparent, transparent) padding-box,
+      conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        rgba(124, 255, 107, 0.12) 240deg,
+        #7cff6b 320deg,
+        transparent 360deg
+      ) border-box;
+    animation: portrait-orbit 9s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes portrait-orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
   /* Scroll-reveal initial state */
   .reveal {
     opacity: 0;
@@ -75,6 +100,10 @@
       opacity: 1;
       transform: none;
       transition: none;
+    }
+
+    .portrait-orbit {
+      animation: none;
     }
   }
 

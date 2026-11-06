@@ -117,3 +117,10 @@ describe('Navbar – mobile menu', () => {
     expect(document.querySelector('[aria-hidden="true"]')).not.toBeNull()
   })
 })
+
+describe('Navbar – navigation links', () => {
+  it('does not include a Testimonials link', () => {
+    render(<Navbar />)
+    expect(document.querySelectorAll('a[href="#testimonials"]')).toHaveLength(0)
+  })
+})
