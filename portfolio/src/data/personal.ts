@@ -10,7 +10,7 @@ export const personal: PersonalData = {
     'When I\'m not coding, you\'ll find me contributing to open-source projects, writing technical articles, or experimenting with generative art.',
   ],
   resumeUrl: '/assets/alex-rivera-resume.pdf',
-  portraitSrc: '/assets/portrait-illustration.svg',
+  portraitSrc: 'public/assets/Professional Circular Headshot.png',
   email: 'hello@alexrivera.dev',
   location: 'San Francisco, CA',
   socials: [
