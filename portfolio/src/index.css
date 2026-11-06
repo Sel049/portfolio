@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@property --portrait-orbit-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
 @layer base {
   :root {
     color-scheme: dark;
@@ -60,26 +66,34 @@
 
   .portrait-orbit {
     position: absolute;
-    inset: -12px;
+    inset: -3px;
     z-index: 20;
-    border: 1px solid transparent;
-    border-radius: 50%;
-    background:
-      linear-gradient(transparent, transparent) padding-box,
-      conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        rgba(124, 255, 107, 0.12) 240deg,
-        #7cff6b 320deg,
-        transparent 360deg
-      ) border-box;
-    animation: portrait-orbit 9s linear infinite;
+    border-radius: 27px;
     pointer-events: none;
   }
 
-  @keyframes portrait-orbit {
+  .portrait-orbit::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 2px;
+    border-radius: inherit;
+    background: conic-gradient(
+      from var(--portrait-orbit-angle),
+      transparent 0deg,
+      rgba(124, 255, 107, 0.12) 240deg,
+      #7cff6b 320deg,
+      transparent 360deg
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: portrait-border-spin 9s linear infinite;
+  }
+
+  @keyframes portrait-border-spin {
     to {
-      transform: rotate(360deg);
+      --portrait-orbit-angle: 360deg;
     }
   }
 
@@ -102,7 +116,7 @@
       transition: none;
     }
 
-    .portrait-orbit {
+    .portrait-orbit::before {
       animation: none;
     }
   }
