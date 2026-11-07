@@ -53,7 +53,7 @@ describe('useCarousel – prev()', () => {
 })
 
 describe('useCarousel – goTo()', () => {
-  // Req 9.11 — goTo(i) sets activeIndex to i when i is in range
+  
   it('sets activeIndex to the given index when in range', () => {
     const { result } = renderHook(() => useCarousel(5))
 
