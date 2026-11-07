@@ -31,7 +31,7 @@ describe('useCarousel – next()', () => {
 })
 
 describe('useCarousel – prev()', () => {
-  // Req 9.10 — prev() decrements activeIndex by 1
+  
   it('decrements activeIndex by 1', () => {
     const { result } = renderHook(() => useCarousel(5))
 
