@@ -61,7 +61,6 @@ describe('useCarousel – goTo()', () => {
     expect(result.current.activeIndex).toBe(3)
   })
 
-  // Req 9.11 — goTo(i) clamps negative values to 0
   it('clamps negative values to 0', () => {
     const { result } = renderHook(() => useCarousel(5))
 
