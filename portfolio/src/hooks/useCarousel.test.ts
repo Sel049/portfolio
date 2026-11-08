@@ -134,7 +134,7 @@ describe('useCarousel – auto-play', () => {
     expect(result.current.activeIndex).toBe(1)
   })
 
-  // Req 9.12 — interval is cleared on unmount
+
   it('clears the interval on unmount', () => {
     const clearSpy = vi.spyOn(globalThis, 'clearInterval')
     const { unmount } = renderHook(() => useCarousel(3, 300))
