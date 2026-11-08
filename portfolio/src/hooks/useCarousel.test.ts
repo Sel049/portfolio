@@ -68,7 +68,7 @@ describe('useCarousel – goTo()', () => {
     expect(result.current.activeIndex).toBe(0)
   })
 
-  // Req 9.11 — goTo(i) clamps values >= itemCount to itemCount - 1
+
   it('clamps values above itemCount - 1 to itemCount - 1', () => {
     const { result } = renderHook(() => useCarousel(5))
 
