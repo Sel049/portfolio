@@ -149,7 +149,6 @@ describe('useCarousel – auto-play', () => {
 // ─── useCarousel property tests ───────────────────────────────────────────────
 
 /**
- * **Validates: Requirements 9.8, 9.9, 9.10, 9.11**
  *
  * Property: For any sequence of next() / prev() / goTo() calls, activeIndex
  * remains in [0, itemCount - 1] at all times.
