@@ -166,7 +166,6 @@ describe('useCarousel – property: 0 <= activeIndex < itemCount', () => {
       fc.constant({ type: 'prev' as const }),
       fc.record({
         type: fc.constant('goTo' as const),
-        // Mix of in-range, negative, and out-of-range values
         index: fc.oneof(
           fc.integer({ min: 0, max: itemCount - 1 }),
           fc.integer({ min: -100, max: -1 }),
