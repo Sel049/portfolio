@@ -9,7 +9,6 @@ import { useMediaQuery } from './useMediaQuery'
  * @param itemCount       - Total number of slides (must be >= 1)
  * @param autoPlayInterval - Auto-advance interval in ms; 0 or omitted = disabled
  *
- * Requirements: 9.8, 9.9, 9.10, 9.11, 9.12
  */
 export function useCarousel(
   itemCount: number,
