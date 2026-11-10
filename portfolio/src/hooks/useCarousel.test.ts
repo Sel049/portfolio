@@ -175,8 +175,7 @@ describe('useCarousel – property: 0 <= activeIndex < itemCount', () => {
 
   it('activeIndex is always in [0, itemCount - 1] for any operation sequence', () => {
     fc.assert(
-      fc.property(
-        // itemCount between 1 and 20, paired with a sequence of operations for that count
+      fc.property(      
         fc.integer({ min: 1, max: 20 }).chain(count =>
           fc.tuple(
             fc.constant(count),
