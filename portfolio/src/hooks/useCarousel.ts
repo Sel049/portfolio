@@ -26,7 +26,7 @@ export function useCarousel(
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const prefersReducedMotion = useMediaQuery('(prefers-reduced-motion: reduce)')
 
-  // Req 9.8: next() wraps from last → 0
+
   const next = useCallback(() => {
     setActiveIndex(i => (i + 1) % itemCount)
   }, [itemCount])
