@@ -31,7 +31,7 @@ export function useCarousel(
     setActiveIndex(i => (i + 1) % itemCount)
   }, [itemCount])
 
-  // Req 9.9: prev() wraps from 0 → last
+
   const prev = useCallback(() => {
     setActiveIndex(i => (i - 1 + itemCount) % itemCount)
   }, [itemCount])
