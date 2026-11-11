@@ -42,7 +42,7 @@ export function useCarousel(
   }, [itemCount])
 
   // Req 9.11: auto-play with pause/resume support
-  // Req 9.12: interval cleared on unmount (via effect cleanup)
+  
   useEffect(() => {
     if (autoPlayInterval <= 0 || isPaused || prefersReducedMotion) return
     intervalRef.current = setInterval(next, autoPlayInterval)
