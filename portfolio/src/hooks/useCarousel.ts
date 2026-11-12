@@ -36,7 +36,7 @@ export function useCarousel(
     setActiveIndex(i => (i - 1 + itemCount) % itemCount)
   }, [itemCount])
 
-  // Req 9.10: goTo(i) clamps i to [0, itemCount - 1]
+ 
   const goTo = useCallback((index: number) => {
     setActiveIndex(Math.max(0, Math.min(index, itemCount - 1)))
   }, [itemCount])
