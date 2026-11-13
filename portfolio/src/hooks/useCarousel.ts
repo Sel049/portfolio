@@ -41,7 +41,7 @@ export function useCarousel(
     setActiveIndex(Math.max(0, Math.min(index, itemCount - 1)))
   }, [itemCount])
 
-  // Req 9.11: auto-play with pause/resume support
+
   
   useEffect(() => {
     if (autoPlayInterval <= 0 || isPaused || prefersReducedMotion) return
