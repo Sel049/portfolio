@@ -4,7 +4,6 @@ import { useMediaQuery } from './useMediaQuery'
 /**
  * Manages carousel index state and optional auto-play.
  *
- * Loop invariant: `0 <= activeIndex < itemCount` at all times.
  *
  * @param itemCount       - Total number of slides (must be >= 1)
  * @param autoPlayInterval - Auto-advance interval in ms; 0 or omitted = disabled
