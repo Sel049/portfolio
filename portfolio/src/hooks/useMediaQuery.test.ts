@@ -48,7 +48,6 @@ describe('useMediaQuery', () => {
     })
   })
 
-  // Req 16.1 — returns true when query matches initially
   it('returns true when the query matches on mount', () => {
     const { mql } = createMatchMediaMock(true)
     mockMatchMedia.mockReturnValue(mql)
