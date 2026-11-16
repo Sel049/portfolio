@@ -2,8 +2,6 @@ import { renderHook, act } from '@testing-library/react'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { useMediaQuery } from './useMediaQuery'
 
-// ─── helpers ────────────────────────────────────────────────────────────────
-
 type ChangeListener = (event: MediaQueryListEvent) => void
 
 /**
