@@ -4,10 +4,7 @@ import { useMediaQuery } from './useMediaQuery'
 
 type ChangeListener = (event: MediaQueryListEvent) => void
 
-/**
- * Creates a controllable mock of window.matchMedia that lets tests
- * imperatively fire change events.
- */
+
 function createMatchMediaMock(initialMatches: boolean) {
   const listeners: ChangeListener[] = []
   let _matches = initialMatches
