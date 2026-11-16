@@ -72,7 +72,7 @@ describe('useMediaQuery', () => {
     expect(result.current).toBe(true)
   })
 
-  // Req 16.2 — updates state when match state changes (true → false)
+
   it('updates to false when the media query stops matching', () => {
     const { mql, fireChange } = createMatchMediaMock(true)
     mockMatchMedia.mockReturnValue(mql)
