@@ -83,8 +83,7 @@ describe('useMediaQuery', () => {
     act(() => fireChange(false))
     expect(result.current).toBe(false)
   })
-
-  // Req 16.3 — removes listener on unmount
+  
   it('removes the change listener when the component unmounts', () => {
     const { mql } = createMatchMediaMock(false)
     mockMatchMedia.mockReturnValue(mql)
