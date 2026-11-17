@@ -83,7 +83,7 @@ describe('useMediaQuery', () => {
     act(() => fireChange(false))
     expect(result.current).toBe(false)
   })
-  
+
   it('removes the change listener when the component unmounts', () => {
     const { mql } = createMatchMediaMock(false)
     mockMatchMedia.mockReturnValue(mql)
@@ -94,7 +94,7 @@ describe('useMediaQuery', () => {
     expect(mql.removeEventListener).toHaveBeenCalledWith('change', expect.any(Function))
   })
 
-  // Req 16.3 — removes listener and re-subscribes when query string changes
+
   it('removes the old listener and attaches a new one when the query changes', () => {
     const { mql: mql1 } = createMatchMediaMock(false)
     const { mql: mql2, fireChange: fireChange2 } = createMatchMediaMock(true)
