@@ -98,8 +98,9 @@ describe('useMediaQuery', () => {
   it('removes the old listener and attaches a new one when the query changes', () => {
     const { mql: mql1 } = createMatchMediaMock(false)
     const { mql: mql2, fireChange: fireChange2 } = createMatchMediaMock(true)
+
+   
     
-    // On rerender with a new query it calls matchMedia twice again.
     mockMatchMedia
       .mockReturnValueOnce(mql1) // lazy useState init — query 1
       .mockReturnValueOnce(mql1) // useEffect sync — query 1
