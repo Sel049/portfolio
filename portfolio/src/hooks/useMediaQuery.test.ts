@@ -99,7 +99,7 @@ describe('useMediaQuery', () => {
     const { mql: mql1 } = createMatchMediaMock(false)
     const { mql: mql2, fireChange: fireChange2 } = createMatchMediaMock(true)
 
-    // The hook calls matchMedia twice on first render:
+  
     //   1. Inside the lazy useState initializer
     //   2. Inside the useEffect (sync after mount)
     // On rerender with a new query it calls matchMedia twice again.
