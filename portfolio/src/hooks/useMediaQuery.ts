@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react'
  * @param query - A valid CSS media query string (e.g. '(prefers-reduced-motion: reduce)')
  * @returns `true` when the media query matches the current environment, `false` otherwise.
  *
- * Requirements: 16.1, 16.2, 16.3
  */
 export function useMediaQuery(query: string): boolean {
   const [matches, setMatches] = useState<boolean>(() => {
