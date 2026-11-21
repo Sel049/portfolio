@@ -27,7 +27,6 @@ export function useNavbarScroll(threshold = 60): boolean {
 
     window.addEventListener('scroll', handleScroll, { passive: true })
 
-    // Remove listener on unmount (Req 15.4)
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
