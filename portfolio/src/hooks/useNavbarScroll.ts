@@ -17,7 +17,7 @@ export function useNavbarScroll(threshold = 60): boolean {
   useEffect(() => {
     if (typeof window === 'undefined') return
 
-    // Sync state in case scroll position changed between render and effect (Req 15.1)
+    // Sync state in case scroll position changed between render and effect 
     setIsScrolled(window.scrollY > threshold)
 
     // Attach passive scroll listener to avoid blocking scrolling (Req 15.3)
