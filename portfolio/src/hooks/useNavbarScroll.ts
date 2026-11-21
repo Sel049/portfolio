@@ -6,8 +6,6 @@ import { useState, useEffect } from 'react'
  *
  * @param threshold - Scroll position in pixels above which `isScrolled` becomes `true`. Defaults to 60.
  * @returns `true` when `window.scrollY` is strictly greater than `threshold`, `false` otherwise.
- *
- * Requirements: 15.1, 15.2, 15.3, 15.4
  */
 export function useNavbarScroll(threshold = 60): boolean {
   const [isScrolled, setIsScrolled] = useState<boolean>(() => {
